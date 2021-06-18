@@ -1,35 +1,38 @@
-`#technology1` `#technology2` `#technology3` `#master-in-software-engineering`
+`#html` `#css` `#js` `#php` `#master-in-software-engineering`
 
-# Pill/Project title <!-- omit in toc -->
+# PHP Local FileSystem explorer <!-- omit in toc -->
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Brief explanation of the purpose of this project, which is what they are going to create, the objective of carrying out this project, ...
->
-> You can separate the explanation in different paragraphs, use all the paragraphs that you need.
+>In this project you will have to create a system file explorer that allows the user to navigate, create directories and upload files in the same way as he would in his usual operating system. 
+
+>The file explorer is a tool that allows you to directly view and manipulate the files and directories associated with a path, so you must take into account from which path the user starts and which path they can access.
+
 
 ## Index <!-- omit in toc -->
 
 - [Requirements](#requirements)
 - [Repository](#repository)
-- [Running the tests (optional)](#running-the-tests-optional)
-- [Deployment (optional)](#deployment-optional)
 - [Technologies used](#technologies-used)
 - [Project delivery](#project-delivery)
 - [Resources](#resources)
 
 ## Requirements
 
-**This section details the main requirements of the project that the student must take into account. Delete this message in the final version of this `README.md`.**
-
-**Here are some examples of project requirements:**
-
-- You must develop this project using a single HTML page
-- You cannot use third-party libraries
-- You must use semantic HTML5 elements for all the contents of the application
-- \---
+- You cannot use file third-party libraries
+- You will not be able to use global variables in PHP.
+- You must use GIT
+- You must use the PHP > v7
+- Create a clear and orderly directory structure
+- Both the code and the comments must be written in English
+- Use the camelCase code style to define variables and functions
+- In the case of using HTML, never use inline styles
+- In the case of using different programming languages ​​always define the implementation in separate terms
+- Remember that it is important to divide the tasks into several sub-tasks so that in this way you can associate each particular step of the construction with a specific commit
+- You should try as much as possible that the commits and the planned tasks are the same
+Delete files that are not used or are not necessary to evaluate the project
 
 ## Repository
 
@@ -39,61 +42,7 @@ To create a fork on GitHub is as easy as clicking the “fork” button on the r
 
 <img src="https://docs.github.com/assets/images/help/repository/fork_button.jpg" alt="Fork on GitHub" width='450'>
 
-### Installing (optional)
-
-**Include this section only if the pill/project need a previous setup.**
-
-A step by step series of examples that tell you how to get a development env
-running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a
-little demo
-
-## Running the tests (optional)
-
-**Include this section only if the pill/project has tests implemented.**
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment (optional)
-
-**Include this section only if the project needs to be deployed in a specific environment.**
-
-Add additional notes about how to deploy this on a live system
-
 ## Technologies used
-
-**This section details the technologies that are used within the project. Delete this message in the final version of this `README.md`.**
-
-**Here are some examples of technologies used:**
 
 \* HTML
 
@@ -101,9 +50,7 @@ Add additional notes about how to deploy this on a live system
 
 \* JS
 
-\* LocalStorage
-
-\* ...
+\* PHP
 
 ## Project delivery
 
@@ -111,13 +58,23 @@ To deliver this project you must follow the steps indicated in the document:
 
 - [Submitting a solution](https://www.notion.so/Submitting-a-solution-524dab1a71dd4b96903f26385e24cdb6)
 
+- You must include the project documentation in PDF format.
+- You must include a presentation in PDF format explaining:
+  - Comparison of the original design (Wireframe) with the final result of the project
+  - Comparison of the use case diagram with the actions that the user can finally perform
+  - Comparison of the original use case diagram with the final user actions
+  - What lessons you’ve learned during this project
+  - What problems have you encountered when developing this project?
+  - How you have organized and distributed the tasks
+
+
 ## Resources
 
 **This section include all the main resources that the students should check.**
 
 **Here are some examples of resources:**
 
-- [JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
-- [JavaScript Dates](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
-- [...](...)
+- [File system](https://es.wikipedia.org/wiki/Administrador_de_archivos)
+- [PHP FileSystem W3C](https://www.w3schools.com/php/php_ref_filesystem.asp)
+- [PHP FileSystem Oficial](https://www.php.net/manual/es/book.filesystem.php)
+- [README Guidelines Example](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
