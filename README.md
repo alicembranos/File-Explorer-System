@@ -70,10 +70,6 @@ To deliver this project you must follow the steps indicated in the document:
 
 ## Resources
 
-**This section include all the main resources that the students should check.**
-
-**Here are some examples of resources:**
-
 - [File system](https://es.wikipedia.org/wiki/Administrador_de_archivos)
 - [PHP FileSystem W3C](https://www.w3schools.com/php/php_ref_filesystem.asp)
 - [PHP FileSystem Oficial](https://www.php.net/manual/es/book.filesystem.php)
