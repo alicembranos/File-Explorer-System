@@ -1,17 +1,16 @@
 <?php
-$data = file_get_contents("D:/Wamp/www/AseemblerPHP/filesystem-explorer/src/db/db.json");
-$users = json_decode($data, true);
 
-$firstname = $users['users'][0]['firstName'];
-$lastname = $users['users'][0]['lastName'];
-$email = $users['users'][0]['email'];
-$logedIn = $users['users'][0]['lastLoggedIn'];
-$imgSrc = $users['users'][0]['img'];
+
+$firstname = $_SESSION['firstname'];
+$lastname = $_SESSION['lastname'];
+$email = $_SESSION['email'];
+$logedIn = $_SESSION['lastloggedIn'];
+$imgSrc = $_SESSION['img'];
 
 ?>
 
 <div class="profile__info">
-    <img src="<?= $imgSrc?>">
+    <img src="<?= $imgSrc ?>">
     <h3><?= "$firstname $lastname" ?></h3>
     <span><?= $email ?></span>
     <span><?= $logedIn ?></span>

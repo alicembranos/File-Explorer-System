@@ -1,5 +1,6 @@
 <?php 
-    require_once('../filesystem-explorer/src/modules/functions.php');
+    require_once(__DIR__. '../../../../modules/functions.php');
 
     checkUser();
+
 ?>

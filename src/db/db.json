@@ -1,46 +1,46 @@
-
-    [{
-            "userId": 1,
-            "firstName": "Rack",
-            "lastName": "Jackon",
-            "type": "admin",
-            "email": "rackjackson@gmail.com",
-            "password": "admin",
-            "img": "./src/assets/img/profiles/root.png",
-            "lastLoggedIn": "Today at 2:18PM",
-            "root": "./root/1/"
-        },
-        {
-            "userId": 2,
-            "firstName": "Rebecca",
-            "lastName": "Smith",
-            "type": "user",
-            "email": "rebecasmith@gmail.com",
-            "password": "rebecca123",
-            "img": "",
-            "lastLoggedIn": "Wed 5 may at 5:00PM",
-            "root": "./root/2/"
-        },
-        {
-            "userId": 3,
-            "firstName": "Michael",
-            "lastName": "Jefferson",
-            "type": "user",
-            "email": "michaeljefferson@gmail.com",
-            "password": "michaeljeff2",
-            "img": "",
-            "lastLoggedIn": "Wed 5 may at 2:18PM",
-            "root": "./root/3/"
-        },
-        {
-            "userId": 4,
-            "firstName": "Amanda",
-            "lastName": "Clark",
-            "type": "user",
-            "email": "amandaclark@gmail.com",
-            "password": "amanda_123",
-            "img": "",
-            "lastLoggedIn": "Mon 3 may at 2:18PM",
-            "root": "./root/4/"
-        }
-    ]
+[
+    {
+        "userId": "1",
+        "firstName": "Rack",
+        "lastName": "Jackon",
+        "type": "admin",
+        "email": "rackjackson@gmail.com",
+        "password": "admin",
+        "img": "./src/assets/img/profiles/root.png",
+        "lastLoggedIn": "Today at 2:18PM",
+        "root": "./root/1/"
+    },
+    {
+        "userId": "2",
+        "firstName": "Rebecca",
+        "lastName": "Smith",
+        "type": "user",
+        "email": "rebecasmith@gmail.com",
+        "password": "rebecca123",
+        "img": "./src/assets/img/profiles/1.png",
+        "lastLoggedIn": "Wed 5 may at 5:00PM",
+        "root": "./root/2/"
+    },
+    {
+        "userId": "3",
+        "firstName": "Michael",
+        "lastName": "Jefferson",
+        "type": "user",
+        "email": "michaeljefferson@gmail.com",
+        "password": "michaeljeff2",
+        "img": "./src/assets/img/profiles/2.png",
+        "lastLoggedIn": "Wed 5 may at 2:18PM",
+        "root": "./root/3/"
+    },
+    {
+        "userId": "4",
+        "firstName": "Amanda",
+        "lastName": "Clark",
+        "type": "user",
+        "email": "amandaclark@gmail.com",
+        "password": "amanda_123",
+        "img": "./src/assets/img/profiles/3.png",
+        "lastLoggedIn": "Mon 3 may at 2:18PM",
+        "root": "./root/4/"
+    }
+]

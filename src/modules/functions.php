@@ -1,18 +1,20 @@
 <?php
 
-function checkUser(){
+function checkUser()
+{
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $data = json_decode(file_get_contents('../db/db.json'), true);
+    $data = json_decode(file_get_contents(__DIR__ . './../db/db.json'), true);
 
-    foreach($data as $user){
+    foreach ($data as $user) {
 
         $encPassword = password_hash($user['password'], PASSWORD_DEFAULT);
+        var_dump($email);
+        var_dump($user['email']);
+        if ($user['email'] === $email) {
 
-        if($user['email'] === $email){
-
-            if(password_verify($password, $encPassword)){
+            if (password_verify($password, $encPassword)) {
                 session_start();
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
@@ -22,23 +24,22 @@ function checkUser(){
                 $_SESSION['lastloggedIn'] = $user['lastLoggedIn'];
                 $_SESSION['pathUser'] = $user['root'];
                 header('Location: ./../index.php');
-            }else{
+            } else {
                 header('Location: ./src/app/components/loginpage/login.php?passworderror=true');
             }
-        }else{
-            header('Location: ./src/app/components/loginpage/login.php?usererror=true');
+        } else {
+            header('Location: ' . __DIR__ . './src/app/components/loginpage/login.php?usererror=true');
         }
     }
 }
 
 
-function checkSession(){
+function checkSession()
+{
 
     session_start();
 
-    if(!isset($_SESSION['email'])){
+    if (!isset($_SESSION['email'])) {
         header('Location: ./src/app/components/loginpage/login.php');
     }
 }
-
-?>
