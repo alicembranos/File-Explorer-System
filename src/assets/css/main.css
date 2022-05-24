@@ -1,4 +1,9 @@
 @import url(./normalize.css);
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+
+*{
+    font-family: 'Oxygen', sans-serif;
+}
 
 :root{
     --primary_color: #92B4EC;
