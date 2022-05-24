@@ -6,21 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Content</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ae63adffc0.js" crossorigin="anonymous" defer></script>
+    <link href="./src/assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
     <main class="main__content">
         <navbar class="main__navbar">
-            <div class="navbar__logo"></div>
-            <div class="navbar__buttons"></div>
-            <div class="navbar__logout"></div>
+            <img class="navbar__logo" src="./src/assets/img/aside/317713_drive_google_google drive_icon.png">
+            <img class="navbar__buttons" src="./src/assets/img/aside/1814090_delete_garbage_trash_icon.png">
+            <img class="navbar__logout" src="./src/assets/img/aside/7853741_logout_kashifarif_exit_out_close_icon.png">
         </navbar>
         <section class="main__section">
             <div class="section__searchbar">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit"><img /></button>
+                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
 
@@ -108,14 +111,12 @@
                     </tbody>
                 </table>
             </div>
-
-            <aside>
+        </section>
+        <aside class="main__aside">
                 <?php
                 require('./src/app/components/aside/aside.php');
                 ?>
             </aside>
-
-        </section>
     </main>
 
     <?php

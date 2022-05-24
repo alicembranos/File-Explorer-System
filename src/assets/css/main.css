@@ -1,0 +1,59 @@
+@import url(./normalize.css);
+
+:root{
+    --primary_color: #92B4EC;
+    --secondary_color: #FFFFFF;
+    --terciary_color: #FFE69A;
+    --cuaternary_color: #FFD24C;
+}
+
+.main__content{
+    border: 1px solid red;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.main__navbar{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 0;
+}
+
+.navbar__logo{
+    width: 48px;
+}
+
+.navbar__buttons{
+    width: 48px;
+}
+
+.navbar__logout{
+    width: 48px;
+}
+
+.main__section{
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.section__actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.display__filters{
+    display: flex;
+}
+
+.main__aside{
+    border: 1px solid yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 0;
+}
