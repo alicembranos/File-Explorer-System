@@ -1,0 +1,43 @@
+{
+    "users": [{
+            "userId": 1,
+            "firstName": "Rack",
+            "lastName": "Jackon",
+            "type": "admin",
+            "email": "rackjackson@gmail.com",
+            "img": "",
+            "lastLoggedIn": "Today at 2:18PM",
+            "root": "./users/rackjackson/"
+        },
+        {
+            "userId": 2,
+            "firstName": "Rebecca",
+            "lastName": "Smith",
+            "type": "user",
+            "email": "rebecasmith@gmail.com",
+            "img": "",
+            "lastLoggedIn": "Wed 5 may at 5:00PM",
+            "root": "./users/rackjackson/"
+        },
+        {
+            "userId": 3,
+            "firstName": "Michael",
+            "lastName": "Jefferson",
+            "type": "user",
+            "email": "michaeljefferson@gmail.com",
+            "img": "",
+            "lastLoggedIn": "Wed 5 may at 2:18PM",
+            "root": "./users/rackjackson/"
+        },
+        {
+            "userId": 4,
+            "firstName": "Amanda",
+            "lastName": "Clark",
+            "type": "user",
+            "email": "amandaclark@gmail.com",
+            "img": "",
+            "lastLoggedIn": "Mon 3 may at 2:18PM",
+            "root": "./users/rackjackson/"
+        }
+    ]
+}
