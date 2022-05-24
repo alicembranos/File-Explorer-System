@@ -1,13 +1,14 @@
-{
-    "users": [{
+
+    [{
             "userId": 1,
             "firstName": "Rack",
             "lastName": "Jackon",
             "type": "admin",
             "email": "rackjackson@gmail.com",
-            "img": "",
+            "password": "admin",
+            "img": "./src/assets/img/profiles/root.png",
             "lastLoggedIn": "Today at 2:18PM",
-            "root": "./users/rackjackson/"
+            "root": "./root/1/"
         },
         {
             "userId": 2,
@@ -15,9 +16,10 @@
             "lastName": "Smith",
             "type": "user",
             "email": "rebecasmith@gmail.com",
+            "password": "rebecca123",
             "img": "",
             "lastLoggedIn": "Wed 5 may at 5:00PM",
-            "root": "./users/rackjackson/"
+            "root": "./root/2/"
         },
         {
             "userId": 3,
@@ -25,9 +27,10 @@
             "lastName": "Jefferson",
             "type": "user",
             "email": "michaeljefferson@gmail.com",
+            "password": "michaeljeff2",
             "img": "",
             "lastLoggedIn": "Wed 5 may at 2:18PM",
-            "root": "./users/rackjackson/"
+            "root": "./root/3/"
         },
         {
             "userId": 4,
@@ -35,9 +38,9 @@
             "lastName": "Clark",
             "type": "user",
             "email": "amandaclark@gmail.com",
+            "password": "amanda_123",
             "img": "",
             "lastLoggedIn": "Mon 3 may at 2:18PM",
-            "root": "./users/rackjackson/"
+            "root": "./root/4/"
         }
     ]
-}

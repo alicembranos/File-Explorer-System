@@ -1,8 +1,20 @@
+<?php
+$data = file_get_contents("D:/Wamp/www/AseemblerPHP/filesystem-explorer/src/db/db.json");
+$users = json_decode($data, true);
+
+$firstname = $users['users'][0]['firstName'];
+$lastname = $users['users'][0]['lastName'];
+$email = $users['users'][0]['email'];
+$logedIn = $users['users'][0]['lastLoggedIn'];
+$imgSrc = $users['users'][0]['img'];
+
+?>
+
 <div class="profile__info">
-    <img>
-    <h3>USERNAME</h3>
-    <span>email@email.com</span>
-    <span>last logged in: 12/12/2012</span>
+    <img src="<?= $imgSrc?>">
+    <h3><?= "$firstname $lastname" ?></h3>
+    <span><?= $email ?></span>
+    <span><?= $logedIn ?></span>
 </div>
 
 <div class="summary__files">
@@ -23,7 +35,7 @@
         <span>48GB</span>
     </div>
     <div class="media__files">
-        <img src="../../../assets/img/files/files.png" style="width: 48px;" >
+        <img src="../../../assets/img/files/files.png" style="width: 48px;">
         <div>
             <span>Others</span>
             <span>24 Files</span>

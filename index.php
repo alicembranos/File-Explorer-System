@@ -1,3 +1,8 @@
+<?php
+    require('./src/modules/functions.php');
+    checkSession();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

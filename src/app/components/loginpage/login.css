@@ -1,0 +1,65 @@
+@import url('../../../assets/css/normalize.css');
+
+.main__container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(253, 253, 253, 0.527);
+}
+
+.form__login{
+    width: 35%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid rgb(150, 150, 150);
+}
+
+.formLogin__input{
+    width: 75%;
+    height: 1.7rem;
+    text-align: center;
+    outline: none;
+    font-size: 17px;
+    border: 1px solid black;
+    background-color: rgb(245, 245, 245);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.formLogin__input:focus{
+    background-color: rgb(153, 153, 153);
+}
+
+.formLogin__input:hover{
+    background-color: rgb(153, 153, 153);
+    color: white;
+    border: 1px solid black;
+    outline: none;
+}
+
+.buttons__div{
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.formLogin__button{
+    width: 30%;
+    margin-top: 2rem;
+    border: 1px solid black;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.formLogin__button a{
+    text-decoration: none;
+    color: white;
+}
