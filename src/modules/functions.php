@@ -23,12 +23,12 @@ function checkUser()
                 $_SESSION['img'] = $user['img'];
                 $_SESSION['lastloggedIn'] = $user['lastLoggedIn'];
                 $_SESSION['pathUser'] = $user['root'];
-                header('Location: ./../index.php');
+                header('Location: ../../../../index.php');
             } else {
-                header('Location: ./src/app/components/loginpage/login.php?passworderror=true');
+                header('Location: ./login.php?passworderror=true');
             }
         } else {
-            header('Location: ' . __DIR__ . './src/app/components/loginpage/login.php?usererror=true');
+            header('Location: ' . __DIR__ . './login.php?usererror=true');
         }
     }
 }
@@ -42,4 +42,13 @@ function checkSession()
     if (!isset($_SESSION['email'])) {
         header('Location: ./src/app/components/loginpage/login.php');
     }
+}
+
+
+function getRootPath($user)
+{
+    $rootPath = getcwd();
+    $rootPath .= "/root/$user/";
+    $rootPath = str_replace("\\", "/", $rootPath);
+    return $rootPath;
 }

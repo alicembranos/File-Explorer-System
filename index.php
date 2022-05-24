@@ -1,5 +1,5 @@
 <?php
-    require('./src/modules/functions.php');
+    require_once('./src/modules/functions.php');
     checkSession();
 ?>
 
