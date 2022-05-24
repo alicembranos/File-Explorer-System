@@ -1,17 +1,25 @@
 <?php
 
-function checkSession()
+function checkSessionIndex()
 {
     session_start();
     if (!isset($_SESSION['email'])) {
-        header('Location: ./src/app/components/loginpage/login.php');
+        header("Location: ./src/app/components/loginpage/login.php");
     }
 }
 
-function getRootPath($user)
+function checkSessionLogin()
+{
+    session_start();
+    if (isset($_SESSION['email'])) {
+        header("Location: ../../../../index.php");
+    }
+}
+
+function getRootPath()
 {
     $rootPath = getcwd();
-    $rootPath .= "/root/$user/";
+    // $rootPath .= "/root/";
     $rootPath = str_replace("\\", "/", $rootPath);
     return $rootPath;
 }

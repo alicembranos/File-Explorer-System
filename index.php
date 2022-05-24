@@ -1,6 +1,6 @@
 <?php
     require_once('./src/modules/functions.php');
-    checkSession();
+    checkSessionIndex();
 ?>
 
 <!DOCTYPE html>
