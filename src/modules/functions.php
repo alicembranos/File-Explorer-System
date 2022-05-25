@@ -35,7 +35,7 @@ function getFiles($path, $arrayBase)
 
     foreach ($arrayBase as $file) {
         if (!is_dir($path . $file)) {
-            $arrayFiles[] = $file;
+            $arrayFiles[] = $path . $file;
         }
     }
 
@@ -50,7 +50,7 @@ function getFolders($path, $arrayBase)
 
     foreach ($arrayBase as $file) {
         if (is_dir($path . $file)) {
-            $arrayDirectories[] = $file;
+            $arrayDirectories[] = $path . $file;
         }
     }
 
