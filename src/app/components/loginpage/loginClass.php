@@ -37,8 +37,7 @@ class LoginUser
                     $_SESSION['pathUser'] = $user['root'];
 
                     header('Location: ../../../../index.php');
-                    echo "hola";
-                    // exit();
+                    exit();
                 }
             }
         }

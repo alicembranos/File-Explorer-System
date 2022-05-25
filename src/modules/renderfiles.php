@@ -1,15 +1,22 @@
 <?php
-session_start();
+require_once('./functions.php');
+//get path from root user folder
+$rootUserPath = getRootRelativeUserPath();
 
-$rootUser = $_SESSION["pathUser"];
-// $myfiles = array_diff(scandir($rootUser), array('.', '..'));
-// echo $rootUser;
+$arrayFiles = array_diff(scandir($rootUserPath), array('.','..' ));
 
+$filesList = getFiles($rootUserPath, $arrayFiles);
+$directories = getFolders($rootUserPath, $arrayFiles);
 
-  $expPath = explode("/", $currentPath);
-  $startIndexRootPath = array_search("root", $expPath, true);
-  $rootRelativePath = "./";
-  for ($i = $startIndexRootPath; $i < count($expPath); $i++) {
-    $rootRelativePath .=  $expPath[$i] . "/";
-  }
-  return $rootRelativePath;
+// var_dump($filesList);
+// var_dump($directories);
+
+foreach ($filesList as $file) {
+  $infoFile = pathinfo($file);
+  echo 'name'. $infoFile['basename'].'<br/>';
+  echo 'creation date'. filectime($rootUserPath.$file).'<br/>';
+  echo 'last modified date'. filemtime($rootUserPath.$file).'<br/>';
+  echo 'extension'. $infoFile['extension'].'<br/>';
+  echo 'size'. filesize($rootUserPath.$file).'<br/>';
+  echo 'last acces time of file'. fileatime($rootUserPath.$file).'<br/>';
+}

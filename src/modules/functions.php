@@ -16,10 +16,43 @@ function checkSessionLogin()
     }
 }
 
-function getRootPath()
+function getRootRelativeUserPath()
 {
-    $rootPath = getcwd();
-    // $rootPath .= "/root/";
-    $rootPath = str_replace("\\", "/", $rootPath);
-    return $rootPath;
+    session_start();
+    if (isset($_SESSION['pathUser'])) {
+        $rootUserPath = PATH_FUNCTIONS . $_SESSION['pathUser'];
+        return $rootUserPath;
+    }
+}
+
+//relative path from functions.php to base root folder
+define('PATH_FUNCTIONS', '../../');
+
+//get files of a given directory
+function getFiles($path, $arrayBase)
+{
+    $arrayFiles = [];
+
+    foreach ($arrayBase as $file) {
+        if (!is_dir($path . $file)) {
+            $arrayFiles[] = $file;
+        }
+    }
+
+    return $arrayFiles;
+}
+
+//get direcotires of a given directory
+function getFolders($path, $arrayBase)
+{
+
+    $arrayDirectories = [];
+
+    foreach ($arrayBase as $file) {
+        if (is_dir($path . $file)) {
+            $arrayDirectories[] = $file;
+        }
+    }
+
+    return $arrayDirectories;
 }

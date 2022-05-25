@@ -32,7 +32,6 @@ if (isset($_POST['submit'])) {
                 <button class="formLogin__button" type="button"><a href="../index.php">CANCEL</a></button>
             </div>
             <p class="error"><?php echo @$user->error ?></p>
-            <p class="success"><?php echo @$user->success ?></p>
         </form>
     </main>
 </body>
