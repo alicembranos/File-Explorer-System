@@ -1,5 +1,5 @@
 <?php
-require_once(   __DIR__ .' /src/modules/functions.php');
+require_once(__DIR__ . ' /src/modules/functions.php');
 checkSessionIndex();
 ?>
 
@@ -31,6 +31,15 @@ checkSessionIndex();
                     <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
+
+            <section class="recentfiles__section">
+                <?php
+                // import recent files modules
+                // require_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/Projects/00_LocalFileSystem/filesystem-explorer/src/modules/recentfiles.php');
+                require_once(__DIR__ . '/src/modules/recentfiles.php');
+                ?>
+
+            </section>
 
             <div class="section__actions">
                 <div class="display__filters">
@@ -68,18 +77,9 @@ checkSessionIndex();
                 </div>
             </div>
 
-            <section class="recentfiles__section">
-                <?php
-                // import recent files modules
-                // require_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/Projects/00_LocalFileSystem/filesystem-explorer/src/modules/recentfiles.php');
-                require_once(__DIR__ . '/src/modules/recentfiles.php');
-                ?>
-
-            </section>
-
             <div class="listfile--items">
-                <?php 
-                require_once __DIR__ .'/src/modules/renderfiles.php';
+                <?php
+                require_once __DIR__ . '/src/modules/renderfiles.php';
                 showTable();
                 ?>
             </div>
