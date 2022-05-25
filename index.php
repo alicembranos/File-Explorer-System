@@ -1,6 +1,6 @@
 <?php
-    require_once('./src/modules/functions.php');
-    checkSessionIndex();
+require_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/Projects/00_LocalFileSystem/filesystem-explorer/src/modules/functions.php');
+checkSessionIndex();
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +69,12 @@
             </div>
 
             <section class="recentfiles__section">
-                <article class="card" style="width: 18rem;">
+                <?php
+                // import recent files modules
+                // require_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/Projects/00_LocalFileSystem/filesystem-explorer/src/modules/recentfiles.php');
+                require_once(__DIR__ . '/src/modules/recentfiles.php');
+                ?>
+                <!-- <article class="card" style="width: 18rem;">
                     <img src="./src/assets/img/extensions/avi.png" class="card-img-top" alt="avi-file-img" style="width: 48px;">
                     <div class="card-body">
                         <h5 class="card-title">pelicula.avi</h5>
@@ -80,7 +85,7 @@
                             <button class="card__icon"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </div>
-                </article>
+                </article> -->
             </section>
 
             <div class="listfile--items">
@@ -115,10 +120,10 @@
             </div>
         </section>
         <aside class="main__aside">
-                <?php
-                require('./src/app/components/aside/aside.php');
-                ?>
-            </aside>
+            <?php
+            require('./src/app/components/aside/aside.php');
+            ?>
+        </aside>
     </main>
 
     <?php

@@ -62,3 +62,7 @@
     justify-content: space-between;
     flex-grow: 0;
 }
+
+.recentfiles__section{
+    display: flex;
+}
