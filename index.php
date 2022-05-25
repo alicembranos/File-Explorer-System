@@ -1,5 +1,5 @@
 <?php
-require_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/Projects/00_LocalFileSystem/filesystem-explorer/src/modules/functions.php');
+require_once(   __DIR__ .' /src/modules/functions.php');
 checkSessionIndex();
 ?>
 
@@ -74,49 +74,14 @@ checkSessionIndex();
                 // require_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/Projects/00_LocalFileSystem/filesystem-explorer/src/modules/recentfiles.php');
                 require_once(__DIR__ . '/src/modules/recentfiles.php');
                 ?>
-                <!-- <article class="card" style="width: 18rem;">
-                    <img src="./src/assets/img/extensions/avi.png" class="card-img-top" alt="avi-file-img" style="width: 48px;">
-                    <div class="card-body">
-                        <h5 class="card-title">pelicula.avi</h5>
-                        <p class="card-text">512KB</p>
-                        <div class="card__actionbuttons">
-                            <button class="card__icon"><i class="fa-solid fa-download"></i></button>
-                            <button class="card__icon"><i class="fa-solid fa-pencil"></i></button>
-                            <button class="card__icon"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                </article> -->
+
             </section>
 
             <div class="listfile--items">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Created</th>
-                            <th scope="col">Modified</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Size</th>
-                            <th scope="col">Action Colums</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php 
+                require_once __DIR__ .'/src/modules/renderfiles.php';
+                showTable();
+                ?>
             </div>
         </section>
         <aside class="main__aside">
@@ -127,8 +92,6 @@ checkSessionIndex();
     </main>
 
     <?php
-    // echo getcwd();  //muestra el directorio actual
-    // chdir();         //cambia el directorio
     ?>
 </body>
 
