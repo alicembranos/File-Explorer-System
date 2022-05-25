@@ -1,6 +1,5 @@
 <?php
 
-
 function checkSessionIndex()
 {
     session_start();
@@ -35,7 +34,7 @@ function getFiles($path, $arrayBase)
     $arrayFiles = [];
 
     foreach ($arrayBase as $file) {
-        if (!is_dir($path.$file)) {
+        if (!is_dir($path . $file)) {
             $arrayFiles[] = $file;
         }
     }
@@ -50,7 +49,7 @@ function getFolders($path, $arrayBase)
     $arrayDirectories = [];
 
     foreach ($arrayBase as $file) {
-        if (is_dir($path.$file)) {
+        if (is_dir($path . $file)) {
             $arrayDirectories[] = $file;
         }
     }
@@ -164,4 +163,45 @@ function formatSizeUnits($bytes)
     }
 
     return $bytes;
+}
+
+//get file and folders of a directory with recursivity
+function getAllFiles($path)
+{
+    $result = [];
+
+    // get the files and folders of the user's folder
+    // $arrayFiles = array_diff(scandir("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $path), array('.', '..'));
+
+    //construct the iterator
+    // $it = new RecursiveDirectoryIterator("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $path);
+
+    // foreach (new RecursiveIteratorIterator($it) as $file) {
+    //     echo $file . "<br/>";
+    // }
+
+    $arrayFiles = glob("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $path . "*");
+    // var_dump($arrayFiles);
+    foreach ($arrayFiles as $value) {
+        echo $value . "<br/>";
+    }
+    // return $result;
+}
+
+
+function getDirContents($dir)
+{
+    $results = array();
+    $files = array_diff(scandir(realpath("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $dir)), array('.', '..'));
+
+    foreach ($files as $key => $value) {
+        if (!is_dir("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/"  . $dir . DIRECTORY_SEPARATOR . $value)) {
+            $results[] = $value;
+        } else if (is_dir("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $dir . DIRECTORY_SEPARATOR . $value)) {
+            $results[] = $value;
+            getDirContents("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/"  . $dir . DIRECTORY_SEPARATOR . $value);
+        }
+    }
+
+    var_dump($results);
 }

@@ -1,5 +1,4 @@
 <?php
-// require_once('./functions.php');
 
 //get path from root user folder
 $rootUserPath = getRootRelativeUserPath();
@@ -26,7 +25,7 @@ $_SESSION["recentFiles"] = getFirstElementsArray(5, $arraySort);
                 <h5 class="card-title"><?= getNameFile($rootUserPath, $recentFile) ?></h5>
                 <p class="card-text"><?= getSizeFile($rootUserPath, $recentFile) ?></p>
                 <div class="card__actionbuttons">
-                    <button class="card__icon"><i class="fa-solid fa-d ownload"></i></button>
+                    <button class="card__icon"><i class="fa-solid fa-download"></i></button>
                     <button class="card__icon"><i class="fa-solid fa-pencil"></i></button>
                     <button class="card__icon"><i class="fa-solid fa-trash"></i></button>
                 </div>
@@ -42,7 +41,7 @@ $_SESSION["recentFiles"] = getFirstElementsArray(5, $arraySort);
                 <a href="<?= $recentFile ?>"><h5 class="card-title"><?= getNameFile($rootUserPath, $recentFile) ?></h5></a>
                 <p class="card-text"><?= getSizeFile($rootUserPath, $recentFile) ?></p>
                 <div class="card__actionbuttons">
-                    <button class="card__icon"><i class="fa-solid fa-d ownload"></i></button>
+                    <button class="card__icon"><i class="fa-solid fa-download"></i></button>
                     <button class="card__icon"><i class="fa-solid fa-pencil"></i></button>
                     <button class="card__icon"><i class="fa-solid fa-trash"></i></button>
                 </div>
