@@ -25,7 +25,7 @@ class LoginUser
     private function login()
     {
         foreach ($this->stored_users as $user) {
-            if ($user['username'] == $this->username) {
+            if ($user['email'] == $this->email) {
                 if (password_verify($this->password, $user['password'])) {
                     session_start();
                     $_SESSION['email'] = $user['email'];
