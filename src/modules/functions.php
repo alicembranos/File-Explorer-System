@@ -1,5 +1,6 @@
 <?php
 
+
 function checkSessionIndex()
 {
     session_start();
@@ -10,7 +11,7 @@ function checkSessionIndex()
 
 function checkSessionLogin()
 {
-    session_start();
+    // session_start();
     if (isset($_SESSION['email'])) {
         header("Location: ../../../../index.php");
     }
@@ -18,12 +19,14 @@ function checkSessionLogin()
 
 function getRootRelativeUserPath()
 {
-    session_start();
+    // session_start();
     if (isset($_SESSION['pathUser'])) {
-        $rootUserPath = PATH_FUNCTIONS . $_SESSION['pathUser'];
+        $rootUserPath = $_SESSION['pathUser'];
         return $rootUserPath;
     }
 }
+
+
 
 //relative path from functions.php to base root folder
 define('PATH_FUNCTIONS', '../../');
@@ -34,8 +37,8 @@ function getFiles($path, $arrayBase)
     $arrayFiles = [];
 
     foreach ($arrayBase as $file) {
-        if (!is_dir($path . $file)) {
-            $arrayFiles[] = $path . $file;
+        if (!is_dir($file)) {
+            $arrayFiles[] = $file;
         }
     }
 
@@ -49,10 +52,11 @@ function getFolders($path, $arrayBase)
     $arrayDirectories = [];
 
     foreach ($arrayBase as $file) {
-        if (is_dir($path . $file)) {
-            $arrayDirectories[] = $path . $file;
+        if (is_dir($file)) {
+            $arrayDirectories[] = $file;
         }
     }
 
     return $arrayDirectories;
 }
+

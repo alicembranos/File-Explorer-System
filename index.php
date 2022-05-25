@@ -1,5 +1,5 @@
 <?php
-    require_once('./src/modules/functions.php');
+    include_once './src/modules/functions.php';
     checkSessionIndex();
 ?>
 
@@ -84,41 +84,17 @@
             </section>
 
             <div class="listfile--items">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Created</th>
-                            <th scope="col">Modified</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Size</th>
-                            <th scope="col">Action Colums</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php 
+                require_once __DIR__ .'/src/modules/renderfiles.php';
+                showTable();
+                ?>
             </div>
         </section>
         <aside class="main__aside">
                 <?php
                 require('./src/app/components/aside/aside.php');
                 ?>
-            </aside>
+        </aside>
     </main>
 
     <?php
