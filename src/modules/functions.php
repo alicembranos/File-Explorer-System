@@ -8,6 +8,7 @@ function checkSessionIndex()
     }
 }
 
+//check session login 
 function checkSessionLogin()
 {
     // session_start();
@@ -16,14 +17,32 @@ function checkSessionLogin()
     }
 }
 
+//get the root path of the user
 function getRootRelativeUserPath()
 {
     if (isset($_SESSION['pathUser'])) {
-        $rootUserPath = $_SESSION['pathUser'];
-        return $rootUserPath;
+        $rootPath = getcwd();
+        $rootPath .= $_SESSION['pathUser'];
+        $rootPath = str_replace("\\", "/", $rootPath);
+        return $rootPath;
+        // $rootUserPath = realpath($_SERVER["DOCUMENT_ROOT"] . '/Projects/00_LocalFileSystem/filesystem-explorer/');
+        // $rootUserPath = $rootUserPath . '/' . $_SESSION['pathUser'];
+        // return $rootUserPath;
     }
 }
 
+//get the path of a directory
+function getRoothPathDirectoryFolder()
+{
+    if (isset($_SESSION['pathUser'])) {
+        $rootPath = getcwd();
+        echo $rootPath;
+        $rootPath = dirname($rootPath, 2);
+        $rootPath = str_replace("\\", "/", $rootPath);
+        $rootPath .= "/root";
+        return $rootPath;
+    }
+}
 
 //relative path from functions.php to base root folder
 define('PATH_FUNCTIONS', realpath($_SERVER["DOCUMENT_ROOT"]) . '/Projects/00_LocalFileSystem/filesystem-explorer/');
@@ -248,4 +267,25 @@ function getSizeArray($array)
 function getNumberOfFiles($array)
 {
     return count($array);
+}
+
+//search if string is contained in a file/directory name, and return match file/directorie array
+function search($path, $word)
+{
+
+    $arrayMatch = [];
+    $dir = new DirectoryIterator(realpath($path));
+    $it = new IteratorIterator($dir);
+
+    foreach ($it as $file) {
+        $wordToSearch = strtolower($word);
+        $fileToSearch = strtolower($file->getFilename());
+        if (str_contains($fileToSearch, $wordToSearch)) {
+            $arrayPath = explode(realpath($path), $file->getPathInfo());
+            $fileMatch =  end($arrayPath) . '/' . $file->getFileName();
+            array_push($arrayMatch, $fileMatch);
+        }
+    }
+
+    return $arrayMatch;
 }
