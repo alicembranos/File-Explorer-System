@@ -166,42 +166,86 @@ function formatSizeUnits($bytes)
 }
 
 //get file and folders of a directory with recursivity
-function getAllFiles($path)
+function getDirContents($path)
 {
-    $result = [];
+    $arrayResult = [];
+    $dir = new RecursiveDirectoryIterator(realpath($path), RecursiveDirectoryIterator::SKIP_DOTS);
+    $it = new RecursiveIteratorIterator($dir);
 
-    // get the files and folders of the user's folder
-    // $arrayFiles = array_diff(scandir("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $path), array('.', '..'));
-
-    //construct the iterator
-    // $it = new RecursiveDirectoryIterator("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $path);
-
-    // foreach (new RecursiveIteratorIterator($it) as $file) {
-    //     echo $file . "<br/>";
-    // }
-
-    $arrayFiles = glob("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $path . "*");
-    // var_dump($arrayFiles);
-    foreach ($arrayFiles as $value) {
-        echo $value . "<br/>";
+    foreach ($it as $file) {
+        array_push($arrayResult, $file->getRealPath());
     }
-    // return $result;
+
+    return $arrayResult;
 }
 
-
-function getDirContents($dir)
+function fillSummaryArrays($extension, $file)
 {
-    $results = array();
-    $files = array_diff(scandir(realpath("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $dir)), array('.', '..'));
+    switch ($extension) {
+        case 'avi':
+            array_push($_SESSION["summaryMediaFiles"], $file);
+            break;
+        case 'doc':
+            array_push($_SESSION["summaryDocs"], $file);
+            break;
+        case 'docx':
+            array_push($_SESSION["summaryDocs"], $file);
+            break;
+        case 'gif':
+            array_push($_SESSION["summaryImages"], $file);
+            break;
+        case 'html':
+            array_push($_SESSION["summaryOthers"], $file);
+            break;
+        case 'jpg':
+            array_push($_SESSION["summaryImages"], $file);
+            break;
+        case 'js':
+            array_push($_SESSION["summaryOthers"], $file);
+            break;
+        case 'mov':
+            array_push($_SESSION["summaryMediaFiles"], $file);
+            break;
+        case 'mp3':
+            array_push($_SESSION["summaryMediaFiles"], $file);
+            break;
+        case 'mp4':
+            array_push($_SESSION["summaryMediaFiles"], $file);
+            break;
+        case 'pdf':
+            array_push($_SESSION["summaryDocs"], $file);
+            break;
+        case 'png':
+            array_push($_SESSION["summaryImages"], $file);
+            break;
+        case 'txt':
+            array_push($_SESSION["summaryDocs"], $file);
+            break;
+        case 'xls':
+            array_push($_SESSION["summaryDocs"], $file);
+            break;
+        case 'xlsx':
+            array_push($_SESSION["summaryDocs"], $file);
+            break;
+        default:
+            array_push($_SESSION["summaryOthers"], $file);
+            break;
+    }
+}
 
-    foreach ($files as $key => $value) {
-        if (!is_dir("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/"  . $dir . DIRECTORY_SEPARATOR . $value)) {
-            $results[] = $value;
-        } else if (is_dir("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/" . $dir . DIRECTORY_SEPARATOR . $value)) {
-            $results[] = $value;
-            getDirContents("C:/xampp/htdocs/Projects/00_LocalFileSystem/filesystem-explorer/"  . $dir . DIRECTORY_SEPARATOR . $value);
-        }
+//get the size of an array files
+function getSizeArray($array)
+{
+    $totalSize = 0;
+    foreach ($array as $file) {
+        $totalSize += filesize($file);
     }
 
-    var_dump($results);
+    return formatSizeUnits($totalSize);
+}
+
+//get the number of files of an array
+function getNumberOfFiles($array)
+{
+    return count($array);
 }
