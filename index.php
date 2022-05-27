@@ -82,7 +82,6 @@ checkSessionIndex();
                                 <span>Create Folder</span>
                             </button>
                         </li>
-                        <!-- <li><a class="dropdown-item" href="#"><i class="fa-solid fa-folder-plus"></i>Create Directory</a></li> -->
                         <li class="dropdown-item">
                             <form action="./src/modules/upload.php" method="POST" enctype="multipart/form-data">
                                 <label>

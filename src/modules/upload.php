@@ -6,9 +6,7 @@ session_start();
 
 $rootPath = getRootRelativeUserPath();
 
-var_dump(isset($_FILES['file']));
 if (isset($_FILES['file'])) {
-
 
     $file = $_FILES['file'];
 
@@ -28,7 +26,6 @@ if (isset($_FILES['file'])) {
         if ($fileError == 0) {
             if ($fileSize <= 1000000000000000) {
                 $fileDest =  dirname(__DIR__, 2) . $_SESSION["pathUser"] . $fileName;
-                echo $fileDest;
                 move_uploaded_file($fileTmpName, $fileDest);
                 header("Location: ../../index.php");
             }

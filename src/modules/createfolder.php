@@ -18,7 +18,7 @@ function checkFolderCreation()
         if (preg_match($pattern, $folderName)) {
             echo "entro";
             mkdir($directory, 0777, true);
-            header("Location: ../../index.php");
+            header("Location: ../.././index.php");
         } else {
             $alert = "Not a valid name folder. Please insert a valid name.";
             return $alert;
