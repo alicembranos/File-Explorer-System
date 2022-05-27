@@ -35,6 +35,7 @@ class LoginUser
                     $_SESSION['img'] = $user['img'];
                     $_SESSION['lastloggedIn'] = $user['lastLoggedIn'];
                     $_SESSION['pathUser'] = $user['root'];
+                    $_SESSION['pathUserBackUp'] = $user['root'];
 
                     header('Location: ../../../../index.php');
                     exit();

@@ -25,21 +25,17 @@ function getRootRelativeUserPath()
         $rootPath .= $_SESSION['pathUser'];
         $rootPath = str_replace("\\", "/", $rootPath);
         return $rootPath;
-        // $rootUserPath = realpath($_SERVER["DOCUMENT_ROOT"] . '/Projects/00_LocalFileSystem/filesystem-explorer/');
-        // $rootUserPath = $rootUserPath . '/' . $_SESSION['pathUser'];
-        // return $rootUserPath;
     }
 }
 
 //get the path of a directory
-function getRoothPathDirectoryFolder()
+function getRoothPathDirectoryFolder($pathChildren)
 {
     if (isset($_SESSION['pathUser'])) {
-        $rootPath = getcwd();
+        $rootPath = $_SESSION["pathUser"];
+        $rootPath .= $pathChildren;
+        $rootPath .= "/";
         echo $rootPath;
-        $rootPath = dirname($rootPath, 2);
-        $rootPath = str_replace("\\", "/", $rootPath);
-        $rootPath .= "/root";
         return $rootPath;
     }
 }

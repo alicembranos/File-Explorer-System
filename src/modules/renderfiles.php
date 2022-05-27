@@ -24,6 +24,9 @@ if (isset($_POST["submit-search"]) && !empty($_POST["search"])) {
   showTable($directories, $filesList, $rootUserPath);
 }
 
+//set origin root 
+$_SESSION["pathUser"] = $_SESSION['pathUserBackUp'];
+
 //render table of files
 function showTable($directories, $filesList, $rootUserPath)
 {
@@ -47,7 +50,7 @@ function showTable($directories, $filesList, $rootUserPath)
       if (!isset($infoFile['extension'])) echo '<td>' . '<i class="fa-solid fa-folder"></i>' . '</td>';
 
 
-      echo "<td><a href='src/modules/updatepath.php?updatedPath=".$directorie."' target=_blank>" . $infoFile['basename'] . "</a></td>";
+      echo "<td><a href='src/modules/updatepath.php?updatedPath=".$directorie."'>" . $infoFile['basename'] . "</a></td>";
       // echo "<td><a href=" . $rootUserPath . str_replace(" ", "%20", $directorie) . " target=_blank>" . $infoFile['basename'] . "</a></td>";
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $directorie)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $directorie)) . '</td>';
