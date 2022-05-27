@@ -50,7 +50,7 @@ function showTable($directories, $filesList, $rootUserPath)
       if (!isset($infoFile['extension'])) echo '<td>' . '<i class="fa-solid fa-folder"></i>' . '</td>';
 
 
-      echo "<td><a href='src/modules/updatepath.php?updatedPath=".$directorie."'>" . $infoFile['basename'] . "</a></td>";
+      echo "<td><a href='src/modules/updatepath.php?updatedPath=" . $directorie . "'>" . $infoFile['basename'] . "</a></td>";
       // echo "<td><a href=" . $rootUserPath . str_replace(" ", "%20", $directorie) . " target=_blank>" . $infoFile['basename'] . "</a></td>";
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $directorie)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $directorie)) . '</td>';
@@ -94,10 +94,10 @@ function showTable($directories, $filesList, $rootUserPath)
           echo '<td>' . '<i class="fa-solid fa-file-video"></i>' . '</td>';
           break;
         case 'mp3':
-          echo '<td>' . '<i class="fa-solid fa-file-music"></i>' . '</td>';
+          echo '<td>' . '<i class="fa-solid fa-file-audio"></i>' . '</td>';
           break;
         case 'mp4':
-          echo '<td>' . '<i class="fa-solid fa-file-music"></i>' . '</td>';
+          echo '<td>' . '<i class="fa-solid fa-file-audio"></i>' . '</td>';
           break;
         case 'pdf':
           echo '<td>' . '<i class="fa-solid fa-file-pdf"></i>' . '</td>';
@@ -116,7 +116,8 @@ function showTable($directories, $filesList, $rootUserPath)
           break;
       }
 
-      echo "<td><a href=" . $rootUserPath . str_replace(" ", "%20", $file) . " target=_blank>" . $infoFile['basename'] . "</a></td>";
+
+      echo '<td><a href=".' . $_SESSION['pathUser'] . str_replace(' ', '%20', $file) . '" target="_blank">' . $infoFile['basename'] . '</a></td>';
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $file)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $file)) . '</td>';
       echo '<td>' . $extension . '</td>';
@@ -129,4 +130,3 @@ function showTable($directories, $filesList, $rootUserPath)
   }
   echo '</table>';
 }
-
