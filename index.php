@@ -23,9 +23,14 @@ checkSessionIndex();
     <main class="main__content">
         <!--Navigation Bar-->
         <navbar class="main__navbar">
-            <img class="navbar__logo" src="./src/assets/img/aside/317713_drive_google_google drive_icon.png">
-            <img class="navbar__buttons" src="./src/assets/img/aside/1814090_delete_garbage_trash_icon.png">
-            <img class="navbar__logout" src="./src/assets/img/aside/7853741_logout_kashifarif_exit_out_close_icon.png">
+            <div class="navbar__start">
+                <img class="navbar__logo" src="./src/assets/img/aside/cloud.png">
+                <img class="navbar__logo" src="./src/assets/img/aside/window.png">
+                <img class="navbar__logo" src="./src/assets/img/aside/users.png">
+                <img class="navbar__logo" src="./src/assets/img/aside/messages.png">
+                <img class="navbar__logo" src="./src/assets/img/aside/trash.png">
+            </div>
+            <div class="navbar__end"><img class="navbar__logo" src="./src/assets/img/aside/logout.png"></div>
         </navbar>
         <!--Navigation Bar-->
         <section class="main__section">
@@ -33,7 +38,7 @@ checkSessionIndex();
             <div class="section__searchbar">
                 <form class="d-flex" role="search" action="./index.php" method="POST">
                     <input class="form-control me-2" type="search" placeholder="Search" name="search" id="search" aria-label="Search" onblur="this.form.action +='?search=' +this.value; this.form.submit()">
-                    <button class="btn btn-outline-success" type="submit" name="submit-search" onchange=""><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="btn btn-primary" type="submit" name="submit-search" onchange=""><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
             <!--Search Bar Section-->
