@@ -1,11 +1,5 @@
-// const createFolder = document.getElementById("createFolder");
+document.getElementById('toogle-aside').addEventListener('click', ()=>{
+    const aside = document.getElementById('main-aside');
 
-// createFolder.addEventListener("click", function () {
-//     const modalCreate = document.getElementById("createModalDirectory");
-//     console.log(modalCreate);
-//     modalCreate.modal();
-// })
-
-// $('#createModalDirectory').on('shown.bs.modal', function () {
-//     $('#defaultForm-name').trigger('focus')
-// })
+    aside.classList.toggle('toogle');
+})

@@ -10,7 +10,7 @@ $arrayFiles = array_diff(scandir($rootUserPath), array('.', '..'));
 $arraySort = sortByAccessDate($rootUserPath, $arrayFiles);
 
 //get five first elements
-$_SESSION["recentFiles"] = getFirstElementsArray(5, $arraySort);
+$_SESSION["recentFiles"] = getFirstElementsArray(6, $arraySort);
 
 ?>
 <?php if (isset($_GET['recentFile']) && !in_array($_GET['recentFile'], $_SESSION["recentFiles"])) :

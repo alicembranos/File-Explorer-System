@@ -46,35 +46,37 @@ if (!isset($_SESSION["summaryImages"])) {
 }
 ?>
 
+<div class="divider"></div>
+
 <div class="media__files">
-    <img class="summary__image" src="./src/assets/img/files/images.png" style="width: 48px;">
+    <img class="summary__image" src="./src/assets/img/files/images.png">
     <div class="summaryInfo">
         <span class="summaryInfo__type">Images</span>
         <span class="summaryInfo__size"><?= getNumberOfFiles($_SESSION["summaryImages"]) ?> Files</span>
     </div>
-    <span><?= getSizeArray($_SESSION["summaryImages"]) ?></span>
+    <span class="span__size"><?= getSizeArray($_SESSION["summaryImages"]) ?></span>
 </div>
 <div class="media__files">
-    <img class="summary__image" src="./src/assets/img/files/mediafiles.png" style="width: 48px;">
+    <img class="summary__image" src="./src/assets/img/files/mediafiles.png">
     <div class="summaryInfo">
         <span class="summaryInfo__type">Media Files</span>
         <span class="summaryInfo__size"><?= getNumberOfFiles($_SESSION["summaryMediaFiles"]) ?> Files</span>
     </div>
-    <span><?= getSizeArray($_SESSION["summaryMediaFiles"]) ?></span>
+    <span class="span__size"><?= getSizeArray($_SESSION["summaryMediaFiles"]) ?></span>
 </div>
 <div class="media__files">
-    <img class="summary__image" src="./src/assets/img/files/docs.png" style="width: 48px;">
+    <img class="summary__image" src="./src/assets/img/files/docs.png">
     <div class="summaryInfo">
         <span class="summaryInfo__type">Documents</span>
         <span class="summaryInfo__size"><?= getNumberOfFiles($_SESSION["summaryDocs"]) ?> Files</span>
     </div>
-    <span><?= getSizeArray($_SESSION["summaryDocs"]) ?></span>
+    <span class="span__size"><?= getSizeArray($_SESSION["summaryDocs"]) ?></span>
 </div>
 <div class="media__files">
-    <img class="summary__image" src="./src/assets/img/files/others.png" style="width: 48px;">
+    <img class="summary__image" src="./src/assets/img/files/others.png">
     <div class="summaryInfo">
         <span class="summaryInfo__type">Others</span>
         <span class="summaryInfo__size"><?= getNumberOfFiles($_SESSION["summaryOthers"]) ?> Files</span>
     </div>
-    <span><?= getSizeArray($_SESSION["summaryOthers"]) ?></span>
+    <span class="span__size"><?= getSizeArray($_SESSION["summaryOthers"]) ?></span>
 </div>
