@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . './functions.php';
+require_once __DIR__ . './functions.php';
 session_start();
 checkPath();
 header("Location:./../../index.php");
@@ -15,5 +15,4 @@ function checkPath()
         $rootPath = getRoothPathDirectoryFolder("");
         $_SESSION["pathUser"] = $rootPath;
     }
-
 }

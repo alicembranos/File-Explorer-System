@@ -41,4 +41,4 @@
         </div>
     </div>
 </div>
-<!-- Modal Rename Folder -->
+<!-- Modal Rename File -->
