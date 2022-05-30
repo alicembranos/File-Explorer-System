@@ -3,7 +3,7 @@
 $firstname = $_SESSION['firstname'];
 $lastname = $_SESSION['lastname'];
 $email = $_SESSION['email'];
-$logedIn = $_SESSION['lastloggedIn'];
+$job = $_SESSION['job'];
 $imgSrc = $_SESSION['img'];
 
 ?>
@@ -12,7 +12,7 @@ $imgSrc = $_SESSION['img'];
     <img class="profile__image" src="<?= $imgSrc ?>">
     <h3><?= "$firstname $lastname" ?></h3>
     <span><?= $email ?></span>
-    <span><?= $logedIn ?></span>
+    <span><?= $job ?></span>
 </div>
 
 <?php
@@ -20,28 +20,22 @@ $imgSrc = $_SESSION['img'];
 //get path from root user folder
 $rootUserPath = getRootRelativeUserPath();
 
+//open session for all summary arrays
+$_SESSION["summaryImages"] = [];
+$_SESSION["summaryMediaFiles"] = [];
+$_SESSION["summaryDocs"] = [];
+$_SESSION["summaryOthers"] = [];
+
+//get files of root path
+$arrayFilesDir = getDirContents($rootUserPath);
+
 //if theres is no session of type docs open, session has been initiated
-if (!isset($_SESSION["summaryImages"])) {
-
-    //open session for all summary arrays
-    $_SESSION["summaryImages"] = [];
-    $_SESSION["summaryMediaFiles"] = [];
-    $_SESSION["summaryDocs"] = [];
-    $_SESSION["summaryOthers"] = [];
-
-    //get files of root path
-    $arrayFilesDir = getDirContents($rootUserPath);
+if (isset($_SESSION["summaryImages"])) {
 
     //add files to its relative array
     foreach ($arrayFilesDir as $file) {
-
         $extension = pathinfo($file, PATHINFO_EXTENSION); //get extension
         fillSummaryArrays($extension, $file); //insert file in its array session
-
-    }
-} else {
-    if (isset($_GET["filesummary"])) {
-        //insert file in its array session
     }
 }
 ?>

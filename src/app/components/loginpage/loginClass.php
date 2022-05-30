@@ -33,7 +33,7 @@ class LoginUser
                     $_SESSION['firstname'] = $user['firstName'];
                     $_SESSION['lastname'] = $user['lastName'];
                     $_SESSION['img'] = $user['img'];
-                    $_SESSION['lastloggedIn'] = $user['lastLoggedIn'];
+                    $_SESSION['job'] = $user['job'];
                     $_SESSION['pathUser'] = $user['root'];
                     $_SESSION['pathUserBackUp'] = $user['root'];
 
