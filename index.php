@@ -16,6 +16,7 @@ checkSessionIndex();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ae63adffc0.js" crossorigin="anonymous" defer></script>
     <link href="./src/assets/css/main.css" rel="stylesheet">
+    <script src="./src/assets/js/main.js" type="module"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@ checkSessionIndex();
                 <img class="navbar__logo" src="./src/assets/img/aside/messages.png">
                 <img class="navbar__logo" src="./src/assets/img/aside/trash.png">
             </div>
-            <div class="navbar__end"><img class="navbar__logo" src="./src/assets/img/aside/logout.png"></div>
+            <div class="navbar__end"><a href="./src/modules/logOut.php?log=out"><img class="navbar__logo" src="./src/assets/img/aside/logout.png"></a></div>
         </navbar>
         <!--Navigation Bar-->
         <section class="main__section">
@@ -81,7 +82,7 @@ checkSessionIndex();
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li class="dropdown-item">
-                            <button id="createFolder" type="button" data-bs-toggle="modal" data-bs-target="#modalCreateFolder">
+                            <button id="createFolder" class="li__button--createfolder" type="button" data-bs-toggle="modal" data-bs-target="#modalCreateFolder">
                                 <i class="fa-solid fa-folder-plus"></i>
                                 <span>Create Folder</span>
                             </button>
@@ -107,8 +108,9 @@ checkSessionIndex();
             </div>
             <!-- List of files section -->
         </section>
+        <button class="toogle__aside"><i class="fa-solid fa-bars"  id="toogle-aside"></i></button>
         <!--Aside Section-->
-        <aside class="main__aside">
+        <aside class="main__aside" id="main-aside">
             <?php
             require('./src/app/components/aside/aside.php');
             ?>

@@ -39,6 +39,8 @@ function showTable($directories, $filesList, $rootUserPath)
   echo '<th class="header__table">' . 'Ext' . '</th>';
   echo '<th class="header__table">' . 'size' . '</th>';
   echo '<th class="header__table">' . 'Date accessed' . '</th>';
+  echo '<th class="header__table"></th>';
+  echo '<th class="header__table"></th>';
   echo '</thead>';
 
   if (!empty($directories)) {
@@ -50,7 +52,7 @@ function showTable($directories, $filesList, $rootUserPath)
       if (!isset($infoFile['extension']))
 
         echo '<tr class="table__row">';
-      echo "<td><i class='fa-solid fa-folder'></i><a href='src/modules/updatepath.php?updatedPath=" . $directorie . "'>" . $infoFile['basename'] . "</a></td>";
+      echo "<td class=td__icon-a><i class='fa-solid fa-folder'></i><a href='src/modules/updatepath.php?updatedPath=" . $directorie . "'>" . $infoFile['basename'] . "</a></td>";
       // echo "<td><a href=" . $rootUserPath . str_replace(" ", "%20", $directorie) . " target=_blank>" . $infoFile['basename'] . "</a></td>";
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $directorie)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $directorie)) . '</td>';
@@ -70,7 +72,7 @@ function showTable($directories, $filesList, $rootUserPath)
       $extension = $infoFile['extension'] ?? '';
 
       echo '<tr class="table__row">';
-      echo '<td>' . getIconExtension($extension) . '<a href=".' . $_SESSION['pathUser'] . str_replace(' ', '%20', $file) . '" target="_blank">' . $infoFile['basename'] . '</a></td>';
+      echo '<td class=td__icon-a>' . getIconExtension($extension) . '<a href=".' . $_SESSION['pathUser'] . str_replace(' ', '%20', $file) . '" target="_blank">' . $infoFile['basename'] . '</a></td>';
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $file)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $file)) . '</td>';
       echo '<td>' . $extension . '</td>';

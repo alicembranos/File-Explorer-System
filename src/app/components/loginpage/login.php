@@ -29,8 +29,13 @@ if (isset($_POST['submit'])) {
             <input class="formLogin__input" name="password" type="password" placeholder="Introduce your password">
             <div class="buttons__div">
                 <button class="formLogin__button" type="submit" name="submit">LOGIN</button>
-                <button class="formLogin__button" type="button"><a href="../index.php">CANCEL</a></button>
+                <button class="formLogin__button" type="button">CANCEL</button>
             </div>
+            <?php
+            if(isset($_GET['exit'])){
+                echo '<span class="error">Bye Bye!</span>';
+            }
+            ?>
             <p class="error"><?php echo @$user->error ?></p>
         </form>
     </main>
