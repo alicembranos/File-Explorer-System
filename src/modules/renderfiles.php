@@ -56,7 +56,8 @@ function showTable($directories, $filesList, $rootUserPath)
       echo '<td>' . $extension . '</td>';
       echo '<td></td>';
       echo '<td>' . date("m/d/y H:i A", fileatime($rootUserPath . $directorie)) . '</td>';
-      echo '<td>' . '<button class=""><i class="fa-solid fa-ellipsis"></i></button>' . '</td>';
+      echo '<td>' . '<button type="button" onclick="renameFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-pen-to-square"></i></button>' . '</td>';
+      echo '<td>' . '<button type="button" onclick="deleteFile(this.data-id, e)" data-id="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-trash"></i></button>' . '</td>';
       echo '</tr>';
     }
   }
@@ -145,19 +146,23 @@ function deleteFile($file)
 
 
 <script>
+
   function renameFile(e) {
     const formRename = document.getElementById("formRename");
     const file = e.target.parentElement.getAttribute("datafile");
     const filePath = document.getElementById("filePath");
     const modal = document.getElementById("modalRename")
     let ModalEdit = new bootstrap.Modal(modal, {}).show();
-    filePath.textContent = "El path es : " + file;
     formRename.setAttribute("action", `./src/modules/renameFile.php/?file=${file}`);
   };
 
-  function deleteFile(file, e) {
-    filePath = document.getElementById("filePath");
-    let ModalEdit = new bootstrap.Modal(modalRename, {}).show();
-    filePath.textContent = "El path es : " + file;
+  function deleteFile(e) {
+    const formRename = document.getElementById("formRename");
+    const file = e.target.parentElement.getAttribute("datafile");
+    const filePath = document.getElementById("filePath");
+    const modal = document.getElementById("modalRename")
+    let ModalEdit = new bootstrap.Modal(modal, {}).show();
+    formRename.setAttribute("action", `./src/modules/renameFile.php/?file=${file}`);
   };
+
 </script>
