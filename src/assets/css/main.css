@@ -121,14 +121,14 @@ body {
     margin-top: 2rem;
 }
 
-.card-body{
+.card-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.title__link{
+.title__link {
     text-decoration: none;
 }
 
@@ -139,46 +139,96 @@ body {
     text-align: center;
 }
 
-.card-title:hover{
+.card-title:hover {
     transform: scale(1.1);
     color: var(--primary_color);
 }
 
-.card-text{
+.card-text {
     font-size: 0.8rem;
     color: rgb(173, 170, 170);
 }
 
-.card__actionbuttons{
+.card__actionbuttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
-.card__icon{
+.card__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
     margin: 0 0.5rem;
-    padding: 0.3rem;
+    border: none;
+    border-radius: 50%;
     background-color: var(--cuaternary_color);
-    border: 1px solid var(--primary_color);
     color: var(--primary_color);
 }
+
+.card__icon:hover {
+    background-color: var(--primary_color);
+    color: var(--cuaternary_color);
+    transform: scale(1.2);
+}
+
 /* Section Actions Buttons */
 .section__actions {
     display: flex;
     flex: 1;
     justify-content: space-between;
+    width: 100%;
 }
 
 .display__filters {
     display: flex;
 }
 
+.dropdown {
+    margin-right: 2rem;
+}
+
+.btn-secondary {
+    background-color: var(--primary_color);
+    border: none;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.btn-secondary:hover {
+    background-color: #3b67f7;
+}
+
+/* Table list of files and directories */
 .listfile--items {
     flex: 9;
+    width: 100%;
     overflow-y: overlay;
 }
 
+.listFiles__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+.header__table {
+    font-size: 0.9rem;
+    color: rgb(173, 170, 170);
+    text-align: left;
+}
+
+.table__row{
+    background-color: white;
+}
+
+.table__row td {
+    height: 20px;
+}
 
 /* Aside Content */
 .main__aside {

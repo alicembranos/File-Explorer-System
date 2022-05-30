@@ -31,26 +31,25 @@ $_SESSION["pathUser"] = $_SESSION['pathUserBackUp'];
 function showTable($directories, $filesList, $rootUserPath)
 {
 
-  echo '<table>';
-  echo '<th>' . '' . '</th>';
-  echo '<th>' . 'name' . '</th>';
-  echo '<th>' . 'creation date' . '</th>';
-  echo '<th>' . 'last modified date' . '</th>';
-  echo '<th>' . 'extension' . '</th>';
-  echo '<th>' . 'size' . '</th>';
-  echo '<th>' . 'last access time of file' . '</th>';
+  echo '<table class="listFiles__table">';
+  echo '<thead class="table__header">';
+  echo '<th class="header__table">' . 'Name' . '</th>';
+  echo '<th class="header__table">' . 'Creation date' . '</th>';
+  echo '<th class="header__table">' . 'Date modified' . '</th>';
+  echo '<th class="header__table">' . 'Ext' . '</th>';
+  echo '<th class="header__table">' . 'size' . '</th>';
+  echo '<th class="header__table">' . 'Date accessed' . '</th>';
+  echo '</thead>';
 
   if (!empty($directories)) {
     foreach ($directories as $directorie) {
       $infoFile = pathinfo($directorie);
       $extension = $infoFile['extension'] ?? '';
+      if (!isset($infoFile['extension']))
 
-      echo '<tr>';
+      echo '<tr class="table__row">';
 
-      if (!isset($infoFile['extension'])) echo '<td>' . '<i class="fa-solid fa-folder"></i>' . '</td>';
-
-
-      echo "<td><a href='src/modules/updatepath.php?updatedPath=" . $directorie . "'>" . $infoFile['basename'] . "</a></td>";
+      echo "<td><i class='fa-solid fa-folder'></i><a href='src/modules/updatepath.php?updatedPath=" . $directorie . "'>" . $infoFile['basename'] . "</a></td>";
       // echo "<td><a href=" . $rootUserPath . str_replace(" ", "%20", $directorie) . " target=_blank>" . $infoFile['basename'] . "</a></td>";
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $directorie)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $directorie)) . '</td>';
@@ -58,73 +57,25 @@ function showTable($directories, $filesList, $rootUserPath)
       echo '<td></td>';
       echo '<td>' . date("m/d/y H:i A", fileatime($rootUserPath . $directorie)) . '</td>';
       echo '<td>' . '<button class=""><i class="fa-solid fa-ellipsis"></i></button>' . '</td>';
+      echo '</tr>';
+
     }
   }
 
   if (!empty($filesList)) {
     foreach ($filesList as $file) {
-      $infoFile = pathinfo($file);
-      echo '<tr>';
 
+      $infoFile = pathinfo($file);
       $extension = $infoFile['extension'] ?? '';
 
-      switch ($extension) {
-        case 'txt':
-          echo '<td>' . '<i class="fa-solid fa-file"></i>' . '</td>';
-          break;
-        case 'doc':
-          echo '<td>' . '<i class="fa-solid fa-file-word"></i>' . '</td>';
-          break;
-        case 'avi':
-          echo '<td>' . '<i class="fa-solid fa-file-video"></i>' . '</td>';
-          break;
-        case 'gif':
-          echo '<td>' . '<i class="fa-solid fa-file-image"></i>' . '</td>';
-          break;
-        case 'html':
-          echo '<td>' . '<i class="fa-brands fa-html5"></i>' . '</td>';
-          break;
-        case 'jpg':
-          echo '<td>' . '<i class="fa-solid fa-file-image"></i>' . '</td>';
-          break;
-        case 'js':
-          echo '<td>' . '<i class="fa-solid fa-file-code"></i>' . '</td>';
-          break;
-        case 'mov':
-          echo '<td>' . '<i class="fa-solid fa-file-video"></i>' . '</td>';
-          break;
-        case 'mp3':
-          echo '<td>' . '<i class="fa-solid fa-file-audio"></i>' . '</td>';
-          break;
-        case 'mp4':
-          echo '<td>' . '<i class="fa-solid fa-file-audio"></i>' . '</td>';
-          break;
-        case 'pdf':
-          echo '<td>' . '<i class="fa-solid fa-file-pdf"></i>' . '</td>';
-          break;
-        case 'png':
-          echo '<td>' . '<i class="fa-solid fa-file-image"></i>' . '</td>';
-          break;
-        case 'xls':
-          echo '<td>' . '<i class="fa-solid fa-file-excel"></i>' . '</td>';
-          break;
-        case 'xlsx':
-          echo '<td>' . '<i class="fa-solid fa-file-excel"></i>' . '</td>';
-          break;
-        default:
-          echo '<td>' . '<i class="fa-solid fa-folder"></i>' . '</td>';
-          break;
-      }
-
-
-      echo '<td><a href=".' . $_SESSION['pathUser'] . str_replace(' ', '%20', $file) . '" target="_blank">' . $infoFile['basename'] . '</a></td>';
+      echo '<tr class="table__row">';
+      echo '<td>' . getIconExtension($extension) . '<a href=".' . $_SESSION['pathUser'] . str_replace(' ', '%20', $file) . '" target="_blank">' . $infoFile['basename'] . '</a></td>';
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $file)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $file)) . '</td>';
       echo '<td>' . $extension . '</td>';
       echo '<td>' . formatSizeUnits(filesize($rootUserPath . $file))  . '</td>';
       echo '<td>' . date("m/d/y H:i A", fileatime($rootUserPath . $file)) . '</td>';
       echo '<td>' . '<button class=""><i class="fa-solid fa-ellipsis"></i></button>' . '</td>';
-
       echo '</tr>';
     }
   }

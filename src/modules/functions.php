@@ -78,6 +78,58 @@ function getFirstElementsArray($num, $array)
     return array_slice($array, 0, $num);
 }
 
+//get icon extension
+function getIconExtension($extension)
+{
+    switch ($extension) {
+        case 'txt':
+            return '<i class="fa-solid fa-file"></i>';
+            break;
+        case 'doc':
+            return '<i class="fa-solid fa-file-word"></i>';
+            break;
+        case 'avi':
+            return '<i class="fa-solid fa-file-video"></i>';
+            break;
+        case 'gif':
+            return '<i class="fa-solid fa-file-image"></i>';
+            break;
+        case 'html':
+            return '<i class="fa-brands fa-html5"></i>';
+            break;
+        case 'jpg':
+            return '<i class="fa-solid fa-file-image"></i>';
+            break;
+        case 'js':
+            return '<i class="fa-solid fa-file-code"></i>';
+            break;
+        case 'mov':
+            return '<i class="fa-solid fa-file-video"></i>';
+            break;
+        case 'mp3':
+            return '<i class="fa-solid fa-file-audio"></i>';
+            break;
+        case 'mp4':
+            return '<i class="fa-solid fa-file-audio"></i>';
+            break;
+        case 'pdf':
+            return '<i class="fa-solid fa-file-pdf"></i>';
+            break;
+        case 'png':
+            return '<i class="fa-solid fa-file-image"></i>';
+            break;
+        case 'xls':
+            return '<i class="fa-solid fa-file-excel"></i>';
+            break;
+        case 'xlsx':
+            return '<i class="fa-solid fa-file-excel"></i>';
+            break;
+        default:
+            return '<i class="fa-solid fa-folder"></i>';
+            break;
+    }
+}
+
 //sort array files by acces date
 function sortByAccessDate($path, $arrayBase)
 {
