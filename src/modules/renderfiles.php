@@ -123,16 +123,18 @@ function showTable($directories, $filesList, $rootUserPath)
       echo '<td>' . $extension . '</td>';
       echo '<td>' . formatSizeUnits(filesize($rootUserPath . $file))  . '</td>';
       echo '<td>' . date("m/d/y H:i A", fileatime($rootUserPath . $file)) . '</td>';
-      echo '<td>' . '<a href="./index.php?path=.'.$_SESSION['pathUser'].'&file='.$infoFile['basename'].'&rename=true"><i class="fa-solid fa-pen-to-square"></i></a>' . '</td>';
-      echo '<td>' . '<a href="./index.php?path=.'.$_SESSION['pathUser'].'&file='.$infoFile['basename'].'&delete=true"><i class="fa-solid fa-trash"></i></a>' . '</td>';
+      echo '<td>' . '<button id="buttonRename" type="button" onclick="renameFile()" datafile="' . $_SESSION['pathUser'].$infoFile['basename'] . '"><i class="fa-solid fa-pen-to-square"></i></button>' . '</td>';
+      echo '<td>' . '<button type="button" onclick="deleteFile(this.data-id, e)" data-id="' . $_SESSION['pathUser'].$infoFile['basename'] . '"><i class="fa-solid fa-trash"></i></button>' . '</td>';
+      // echo '<td>' . '<a href="./index.php?path=.'.$_SESSION['pathUser'].'&file='.$infoFile['basename'].'&rename=true"><i class="fa-solid fa-pen-to-square"></i></a>' . '</td>';
+      // echo '<td>' . '<a href="./index.php?path=.'.$_SESSION['pathUser'].'&file='.$infoFile['basename'].'&delete=true"><i class="fa-solid fa-trash"></i></a>' . '</td>';
 
       echo '</tr>';
     }
   }
   echo '</table>';
 
-  setFileInfo($infoFile);
-  deleteFile($infoFile);
+  // setFileInfo($infoFile);
+  // deleteFile($infoFile);
 
 }
 
@@ -183,3 +185,46 @@ function deleteFile($file){
     var_dump($_GET['path'], $file['basename'], $_GET['delete']);
   }
 }
+
+?>
+
+<!-- Modal Rename File -->
+<div class="modal fade" id="modalRename" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Rename File/Directory</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="./src/modules/createfolder.php" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="text" id="folderName" name="folderName" placeholder="Insert directory name" class="form-control validate">
+                    <button type="submit" name="submit" class="btn btn-secondary">Rename</button>
+                    <p id="filePath"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal Rename Folder -->
+
+<script>
+    function renameFile() {
+      const button = document.getElementById("buttonRename");
+      const file = button.getAttribute("dataFile");
+      filePath = document.getElementById("filePath");
+      var ModalEdit = new bootstrap.Modal(modalRename, {}).show();
+      filePath.textContent = "El path es : " + file;
+    };
+    
+    function deleteFile(file, e) {
+      filePath = document.getElementById("filePath");
+      var ModalEdit = new bootstrap.Modal(modalRename, {}).show();
+      filePath.textContent = "El path es : " + file;
+    };
+
+</script>
+
