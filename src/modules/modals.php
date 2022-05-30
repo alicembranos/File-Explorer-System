@@ -28,9 +28,9 @@
                 <h5 class="modal-title" id="exampleModalLongTitle">Rename File/Directory</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="./src/modules/createfolder.php" method="POST" enctype="multipart/form-data">
+            <form id="formRename" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <input type="text" id="folderName" name="folderName" placeholder="Insert directory name" class="form-control validate">
+                    <input type="text" id="fileName" name="fileName" placeholder="Insert directory name" class="form-control validate">
                     <button type="submit" name="submit" class="btn btn-secondary">Rename</button>
                     <p id="filePath"></p>
                 </div>
