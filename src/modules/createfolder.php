@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . './functions.php';
-
 checkFolderCreation();
 
 function checkFolderCreation()
@@ -16,7 +14,6 @@ function checkFolderCreation()
         $pattern = "/[a-zA-Z0-9]/";
 
         if (preg_match($pattern, $folderName)) {
-            echo "entro";
             mkdir($directory, 0777, true);
             header("Location: ../.././index.php");
         } else {
