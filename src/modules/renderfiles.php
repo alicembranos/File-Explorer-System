@@ -57,8 +57,8 @@ function showTable($directories, $filesList, $rootUserPath)
       echo '<td>' . $extension . '</td>';
       echo '<td></td>';
       echo '<td>' . date("m/d/y H:i A", fileatime($rootUserPath . $directorie)) . '</td>';
-      echo '<td>' . '<button type="button" onclick="renameFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-pencil"></i></button>' . '</td>';
-      echo '<td>' . '<button type="button" onclick="deleteFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-trash"></i></button>' . '</td>';
+      echo '<td>' . '<button class="cardIcons__table" type="button" onclick="renameFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-pencil"></i></button>' . '</td>';
+      echo '<td>' . '<button class="cardIcons__table" type="button" onclick="deleteFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-trash"></i></button>' . '</td>';
       echo '</tr>';
     }
   }
@@ -76,8 +76,8 @@ function showTable($directories, $filesList, $rootUserPath)
       echo '<td>' . $extension . '</td>';
       echo '<td>' . formatSizeUnits(filesize($rootUserPath . $file))  . '</td>';
       echo '<td>' . date("m/d/y H:i A", fileatime($rootUserPath . $file)) . '</td>';
-      echo '<td>' . '<button type="button" onclick="renameFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-pencil"></i></button>' . '</td>';
-      echo '<td>' . '<button type="button" onclick="deleteFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-trash"></i></button>' . '</td>';
+      echo '<td>' . '<button class="cardIcons__table" type="button" onclick="renameFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-pencil"></i></button>' . '</td>';
+      echo '<td>' . '<button class="cardIcons__table" type="button" onclick="deleteFile(event)" datafile="' . $_SESSION['pathUser'] . $infoFile['basename'] . '"><i class="fa-solid fa-trash"></i></button>' . '</td>';
       echo '</tr>';
     }
   }

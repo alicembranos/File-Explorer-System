@@ -15,7 +15,7 @@ function checkDeleteFile()
                 rmdir($folder);
                 header("Location: ../../.././index.php");
             } else {
-                //rename file
+                //remove file
                 $file = dirname(getcwd(), 2) . $_GET['file'];
                 unlink($file);
                 header("Location: ../../.././index.php");

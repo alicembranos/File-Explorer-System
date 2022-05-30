@@ -157,7 +157,9 @@ body {
     width: 100%;
 }
 
-.card__icon {
+
+.card__icon,
+.cardIcons__table {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,6 +170,11 @@ body {
     border-radius: 50%;
     background-color: var(--cuaternary_color);
     color: var(--primary_color);
+}
+
+.cardIcons__table {
+    margin: 0;
+    background-color: white;
 }
 
 .card__icon:hover {
@@ -222,7 +229,7 @@ body {
     text-align: left;
 }
 
-.table__row{
+.table__row {
     background-color: white;
 }
 
