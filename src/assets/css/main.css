@@ -311,19 +311,19 @@
     margin-right: 1rem;
 }
 
-.media__files:nth-child(2) img {
+.media__files:nth-child(3) img {
     background-color: rgb(189, 242, 255);
 }
 
-.media__files:nth-child(3) img {
+.media__files:nth-child(4) img {
     background-color: rgb(213, 255, 189);
 }
 
-.media__files:nth-child(4) img {
+.media__files:nth-child(5) img {
     background-color: rgb(255, 223, 189);
 }
 
-.media__files:nth-child(5) img {
+.media__files:nth-child(6) img {
     background-color: rgb(249, 189, 255);
 }
 
