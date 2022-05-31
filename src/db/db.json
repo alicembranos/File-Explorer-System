@@ -1,14 +1,14 @@
-[
-    {
+[{
         "userId": "1",
         "firstName": "Rack",
         "lastName": "Jackon",
         "type": "admin",
         "email": "rackjackson@gmail.com",
-        "password": "admin",
+        "password": "$2y$10$5UIHPjKspkEsusnuTMJZweAzBo8AXw/yVO9NGYQEMv20OECds.b4K",
         "img": "./src/assets/img/profiles/root.png",
-        "lastLoggedIn": "Today at 2:18PM",
-        "root": "./root/1/"
+        "job": "Software Developer",
+        "root": "/root/1/",
+        "rootBase": "root/1"
     },
     {
         "userId": "2",
@@ -16,10 +16,11 @@
         "lastName": "Smith",
         "type": "user",
         "email": "rebecasmith@gmail.com",
-        "password": "rebecca123",
+        "password": "$2y$10$JHymFxOm.9LoC2YmZOGdheqfXsU1WqL9JGMJWUKAHCtn7Ju6CABpm",
         "img": "./src/assets/img/profiles/1.png",
-        "lastLoggedIn": "Wed 5 may at 5:00PM",
-        "root": "./root/2/"
+        "job": "Scrum Master",
+        "root": "/root/2/",
+        "rootBase": "root/2"
     },
     {
         "userId": "3",
@@ -27,10 +28,11 @@
         "lastName": "Jefferson",
         "type": "user",
         "email": "michaeljefferson@gmail.com",
-        "password": "michaeljeff2",
+        "password": "$2y$10$BY449G5yQoHW0enPx3GyyOPe4Yn3ub1w2uMcKztifHJKk89cvwb5e",
         "img": "./src/assets/img/profiles/2.png",
-        "lastLoggedIn": "Wed 5 may at 2:18PM",
-        "root": "./root/3/"
+        "job": "HH.RR Manager",
+        "root": "/root/3/",
+        "rootBase": "root/3"
     },
     {
         "userId": "4",
@@ -38,9 +40,10 @@
         "lastName": "Clark",
         "type": "user",
         "email": "amandaclark@gmail.com",
-        "password": "amanda_123",
+        "password": "$2y$10$4OW7itKxnw4zz87.HwLan.yifltpvTNpDttPxUomYULiOEQ0SdVEK",
         "img": "./src/assets/img/profiles/3.png",
-        "lastLoggedIn": "Mon 3 may at 2:18PM",
-        "root": "./root/4/"
+        "job": "Software Developer",
+        "root": "/root/4/",
+        "rootBase": "root/4"
     }
 ]
