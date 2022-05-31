@@ -88,7 +88,7 @@ function showTable($directories, $filesList, $rootUserPath)
       $extension = $infoFile['extension'] ?? '';
 
       echo '<tr class="table__row">';
-      echo '<td>' . getIconExtension($extension) . '<a href="' . "/" . $_SESSION['pathUser'] .  str_replace(' ', '%20', $file) . '" target="_blank">' . $infoFile['basename'] . '</a></td>';
+      echo '<td>' . getIconExtension($extension) . '<a href="' . "." . $pathUser . "/" .  str_replace(' ', '%20', $file) . '" target="_blank">' . $infoFile['basename'] . '</a></td>';
       echo '<td>' . date("m/d/y H:i A", filectime($rootUserPath . $file)) . '</td>';
       echo '<td>' . date("m/d/y H:i A", filemtime($rootUserPath . $file)) . '</td>';
       echo '<td>' . $extension . '</td>';

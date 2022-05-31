@@ -25,7 +25,6 @@ $_SESSION["recentFiles"] = getFirstElementsArray(7, $arraySort);
             <img src="<?= getImageExtension($recentFile) ?>" class="card-img" alt="avi-file-img" style="width: 48px;">
             <!-- <img src="" class="card-img-top" alt="avi-file-img" style="width: 48px;"> -->
             <div class="card-body">
-                <!-- <h5 class="card-title"><?= getNameFile($rootUserPath, $recentFile) ?></h5> -->
                 <a class="title__link" href="<?= $recentFile ?>">
                     <h5 class="card-title"><?= getNameFile($rootUserPath, $recentFile) ?></h5>
                 </a>
@@ -49,8 +48,12 @@ $_SESSION["recentFiles"] = getFirstElementsArray(7, $arraySort);
         <article class="card-recent bg-white" style="width: 15rem;">
             <img src="<?= getImageExtension($recentFile) ?>" class="card-img" alt="avi-file-img" style="width: 48px;">
             <div class="card-body">
-                <!-- <h5 class="card-title"><?= getNameFile($rootUserPath, $recentFile) ?></h5> -->
-                <a class="title__link" href="<?= $recentFile ?>">
+                <?php 
+                //substratc string root of user
+                $pos = strpos($recentFile,$_SESSION["pathUser"]);
+                $path = substr($recentFile, $pos);
+                ?>
+                <a class="title__link" href="<?= '.' . $path?> " target='_blank'>
                     <h5 class="card-title"><?= getNameFile($rootUserPath, $recentFile) ?></h5>
                 </a>
                 <p class="card-text"><?= getSizeFile($rootUserPath, $recentFile) ?></p>
