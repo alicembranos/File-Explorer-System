@@ -1,7 +1,7 @@
 <?php
 
 //get path from root user folder
-$rootUserPath = getRootRelativeUserPath();
+$rootUserPath = getRoothPathDirectoryFolder();
 
 //get the files of the user's folder
 $arrayFiles = array_diff(scandir($rootUserPath), array('.', '..'));
@@ -10,7 +10,7 @@ $arrayFiles = array_diff(scandir($rootUserPath), array('.', '..'));
 $arraySort = sortByAccessDate($rootUserPath, $arrayFiles);
 
 //get five first elements
-$_SESSION["recentFiles"] = getFirstElementsArray(6, $arraySort);
+$_SESSION["recentFiles"] = getFirstElementsArray(7, $arraySort);
 
 ?>
 <?php if (isset($_GET['recentFile']) && !in_array($_GET['recentFile'], $_SESSION["recentFiles"])) :

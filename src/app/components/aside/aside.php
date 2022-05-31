@@ -19,7 +19,6 @@ $imgSrc = $_SESSION['img'];
 
 //get path from root user folder
 $rootUserPath = getRootRelativeUserPath();
-
 //open session for all summary arrays
 $_SESSION["summaryImages"] = [];
 $_SESSION["summaryMediaFiles"] = [];

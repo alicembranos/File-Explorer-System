@@ -8,9 +8,21 @@ function checkFolderCreation()
 
     if (isset($_POST['submit'])) {
 
-        $rootPath = dirname(getcwd(), 2) . $_SESSION['pathUser'];
+        //get path from root user folder
+        $dirToCompare = str_replace("\\", "/", dirname(__FILE__, 3));
         $folderName = $_POST['folderName'];
-        $directory = $rootPath . $folderName;
+
+        if (str_contains($_SESSION['pathUser'], $dirToCompare)) {
+            $arrayBase = explode($dirToCompare, $_SESSION['pathUser']);
+            $pathUser = end($arrayBase);
+            $rootPath = dirname(getcwd(), 2) . $pathUser;
+            $directory = $rootPath . "/" . $folderName;
+        } else {
+            $pathUser = $_SESSION['pathUser'];
+            $rootPath = dirname(getcwd(), 2) . $pathUser;
+            $directory = $rootPath . $folderName;
+        }
+
         $pattern = "/[a-zA-Z0-9]/";
 
         if (preg_match($pattern, $folderName)) {

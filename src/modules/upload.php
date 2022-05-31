@@ -25,7 +25,13 @@ if (isset($_FILES['file'])) {
     if (in_array(end($fileExt), $allowed)) {
         if ($fileError == 0) {
             if ($fileSize <= 1000000000000000) {
-                $fileDest =  dirname(__DIR__, 2) . $_SESSION["pathUser"] . $fileName;
+                $dirToCompare = str_replace("\\", "/", dirname(__FILE__, 3));
+                if (str_contains($_SESSION['pathUser'], $dirToCompare)) {
+                    $pathUser = end($arrayBase);
+                } else {
+                    $pathUser = $_SESSION['pathUser'];
+                }
+                $fileDest =  dirname(__DIR__, 2) . $pathUser . $fileName;
                 move_uploaded_file($fileTmpName, $fileDest);
                 header("Location: ../../index.php");
             }

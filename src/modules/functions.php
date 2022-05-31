@@ -20,24 +20,30 @@ function checkSessionLogin()
 //get the root path of the user
 function getRootRelativeUserPath()
 {
+
     if (isset($_SESSION['pathUser'])) {
-        $rootPath = getcwd();
-        $rootPath .= $_SESSION['pathUser'];
-        $rootPath = str_replace("\\", "/", $rootPath);
+
+        if (mb_substr_count($_SESSION['pathUser'], "filesystem-explorer") === 1) {
+            // $expPath = explode("/", $_SESSION['pathUser']);
+            $rootPath = $_SESSION['pathUser'];
+            $rootPath .= "/";
+            $rootPath = str_replace("\\", "/", $rootPath);
+        } else {
+            $rootPath = getcwd();
+            $rootPath .= $_SESSION['pathUser'];
+            $rootPath = str_replace("\\", "/", $rootPath);
+        }
         return $rootPath;
     }
 }
 
 //get the path of a directory
-function getRoothPathDirectoryFolder($pathChildren)
+function getRoothPathDirectoryFolder()
 {
-    if (isset($_SESSION['pathUser'])) {
-        $rootPath = $_SESSION["pathUser"];
-        $rootPath .= $pathChildren;
-        $rootPath .= "/";
-        echo $rootPath;
-        return $rootPath;
-    }
+    $rootPath = getcwd();
+    $rootPath = str_replace("\\", "/", $rootPath);
+    $rootPath .= $_SESSION["pathUserBackUp"];
+    return $rootPath;
 }
 
 //relative path from functions.php to base root folder
@@ -83,49 +89,49 @@ function getIconExtension($extension)
 {
     switch ($extension) {
         case 'txt':
-            return '<i class="fa-solid fa-file"></i>';
+            return '<i class="fa-solid fa-file icons"></i>';
             break;
         case 'doc':
-            return '<i class="fa-solid fa-file-word"></i>';
+            return '<i class="fa-solid fa-file-word icons"></i>';
             break;
         case 'avi':
-            return '<i class="fa-solid fa-file-video"></i>';
+            return '<i class="fa-solid fa-file-video icons"></i>';
             break;
         case 'gif':
-            return '<i class="fa-solid fa-file-image"></i>';
+            return '<i class="fa-solid fa-file-image icons"></i>';
             break;
         case 'html':
-            return '<i class="fa-brands fa-html5"></i>';
+            return '<i class="fa-brands fa-html5 icons"></i>';
             break;
         case 'jpg':
-            return '<i class="fa-solid fa-file-image"></i>';
+            return '<i class="fa-solid fa-file-image icons"></i>';
             break;
         case 'js':
-            return '<i class="fa-solid fa-file-code"></i>';
+            return '<i class="fa-solid fa-file-code icons"></i>';
             break;
         case 'mov':
-            return '<i class="fa-solid fa-file-video"></i>';
+            return '<i class="fa-solid fa-file-video icons"></i>';
             break;
         case 'mp3':
-            return '<i class="fa-solid fa-file-audio"></i>';
+            return '<i class="fa-solid fa-file-audio icons"></i>';
             break;
         case 'mp4':
-            return '<i class="fa-solid fa-file-audio"></i>';
+            return '<i class="fa-solid fa-file-audio icons"></i>';
             break;
         case 'pdf':
-            return '<i class="fa-solid fa-file-pdf"></i>';
+            return '<i class="fa-solid fa-file-pdf icons"></i>';
             break;
         case 'png':
-            return '<i class="fa-solid fa-file-image"></i>';
+            return '<i class="fa-solid fa-file-image icons"></i>';
             break;
         case 'xls':
-            return '<i class="fa-solid fa-file-excel"></i>';
+            return '<i class="fa-solid fa-file-excel icons"></i>';
             break;
         case 'xlsx':
-            return '<i class="fa-solid fa-file-excel"></i>';
+            return '<i class="fa-solid fa-file-excel icons"></i>';
             break;
         default:
-            return '<i class="fa-solid fa-folder"></i>';
+            return '<i class="fa-solid fa-folder icons"></i>';
             break;
     }
 }

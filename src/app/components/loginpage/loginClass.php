@@ -27,7 +27,9 @@ class LoginUser
         foreach ($this->stored_users as $user) {
             if ($user['email'] == $this->email) {
                 if (password_verify($this->password, $user['password'])) {
+
                     session_start();
+                    
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['password'] = $user['password'];
                     $_SESSION['firstname'] = $user['firstName'];
@@ -36,6 +38,7 @@ class LoginUser
                     $_SESSION['job'] = $user['job'];
                     $_SESSION['pathUser'] = $user['root'];
                     $_SESSION['pathUserBackUp'] = $user['root'];
+                    $_SESSION['root'] = $user["rootBase"];
 
                     header('Location: ../../../../index.php');
                     exit();

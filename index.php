@@ -37,7 +37,7 @@ checkSessionIndex();
             <!--Search Bar Section-->
             <div class="section__searchbar">
                 <form class="d-flex" role="search" action="./index.php" method="POST">
-                    <input class="form-control me-2" type="search" placeholder="Search" name="search" id="search" aria-label="Search" onblur="this.form.action +='?search=' +this.value; this.form.submit()">
+                    <input class="form-control me-2" type="search" placeholder="Search" name="search" id="search" aria-label="Search">
                     <button class="btn btn-primary" type="submit" name="submit-search" onchange=""><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -50,6 +50,9 @@ checkSessionIndex();
 
             </section>
             <!--Recent files Section-->
+            <div class="col col-12 current_path">
+                <?php require_once("./src/modules/navigatefolder.php"); ?>
+            </div>
             <!--Actions Menu-->
             <div class="section__actions">
                 <div class="display__filters">
@@ -101,7 +104,7 @@ checkSessionIndex();
             </div>
             <!--Actions Menu-->
             <!-- List of files section -->
-            <div class="listfile--items">
+            <div class="listfile__items scrollbar">
                 <?php
                 require_once __DIR__ . '/src/modules/renderfiles.php';
                 ?>
