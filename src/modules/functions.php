@@ -36,7 +36,7 @@ function checkUser()
     }
 }
 
-function checkSession()
+function checkSessionIndex()
 {
     session_start();
     if (!isset($_SESSION['email'])) {
